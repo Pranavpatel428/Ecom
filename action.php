@@ -285,7 +285,7 @@ if (isset($_POST["Common"])) {
 					//Paypal checkout form
 					echo '
 						</form>
-						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+						<form action="" method="post">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="business" value="shoppingcart@khanstore.com">
 							<input type="hidden" name="upload" value="1">';
