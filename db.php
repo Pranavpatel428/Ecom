@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "ecom";
-$password = "ecom";
+$username = "root";
+$password = "root1";
 $db = "khanstore";
 
 // Create connection

@@ -1,8 +1,20 @@
 <?php
-if (isset($_GET["register"])) {
-	
-	?>
+session_start();
+include "db.php";
+if (isset($_SESSION["signup_button"])) {
+	$address = $_POST["address"];
+	$name = $_POST["f_name"] . " " . $_POST["l_name"];
+	$number = $_POST["mobile"];
 
+	$sql = "INSERT INTO `guestuser` 
+		(`id`,`name`,`number`,`address`) 
+		VALUES (NULL, '$name', '$number', '$address')";
+		if ($conn->query($sql)) {
+			
+		}
+}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -41,14 +53,14 @@ if (isset($_GET["register"])) {
 			<div class="col-md-2"></div>
 		</div>
 		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Customer SignUp Form</div>
+					<div class="panel-heading">Guest Login Form</div>
 					<div class="panel-body">
-					
-					<form id="signup_form" onsubmit="return false">
-						<div class="row">
+						<!--User Login Form-->
+						<form>
+							<div class="row">
 							<div class="col-md-6">
 								<label for="f_name">First Name</label>
 								<input type="text" id="f_name" name="f_name" class="form-control">
@@ -60,63 +72,37 @@ if (isset($_GET["register"])) {
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<label for="email">Email</label>
-								<input type="text" id="email" name="email"class="form-control">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label for="password">password</label>
-								<input type="password" id="password" name="password"class="form-control">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label for="repassword">Re-enter Password</label>
-								<input type="password" id="repassword" name="repassword"class="form-control">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
 								<label for="mobile">Mobile</label>
 								<input type="text" id="mobile" name="mobile"class="form-control">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<label for="address1">Address Line 1</label>
-								<input type="text" id="address1" name="address1"class="form-control">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label for="address2">Address Line 2</label>
-								<input type="text" id="address2" name="address2"class="form-control">
+								<label for="address">Address</label>
+								<textarea id="address" class="form-control mt-1"  name="address" placeholder="Enter Address" rows="2"></textarea>
 							</div>
 						</div>
 						<p><br/></p>
 						<div class="row">
-							<div class="col-md-12">
-								<input style="width:100%;" value="Sign Up" type="submit" name="signup_button"class="btn btn-success btn-lg">
+							<div>
+								<div style="margin-left: 17px;"><a href="login_form.php">Login</a></div>
+
+								<input style="float: right;margin-right: 15px;" value="Continue" type="submit" name="signup_button"class="btn btn-success btn-lg">
+								
+								<div style="margin-left: 17px;"><a href="customer_registration.php?register=1">Create a new account?</a></div>
 							</div>
 						</div>
 						
-					</div>
-					</form>
-					<div class="panel-footer"></div>
+					</div>					
+						</form>
 				</div>
+				<div class="panel-footer"><div id="e_msg"></div></div>
 			</div>
-			<div class="col-md-2"></div>
 		</div>
+		<div class="col-md-4"></div>
 	</div>
 </body>
 </html>
-	<?php
-}
-
-
-
-?>
 
 
 
