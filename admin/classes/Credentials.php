@@ -54,7 +54,12 @@ class Credentials
 //PRINT_R($c->loginAdmin("rizwan@gmail.com", "12345"));
 
 if (isset($_POST['admin_register'])) {
-	extract($_POST);
+	// extract($_POST);
+	$name  = $_POST['name'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	$cpassword = $_POST['cpassword'];
+
 	if (!empty($name) && !empty($email) && !empty($password) && !empty($cpassword)) {
 		if ($password == $cpassword) {
 			$c = new Credentials();
@@ -72,7 +77,9 @@ if (isset($_POST['admin_register'])) {
 }
 
 if (isset($_POST['admin_login'])) {
-	extract($_POST);
+	// extract($_POST);
+	$email = $_POST['name'];
+	$password = $_POST['password'];
 	if (!empty($email) && !empty($password)) {
 		$c = new Credentials();
 		$result = $c->loginAdmin($email, $password);
