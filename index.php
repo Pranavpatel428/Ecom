@@ -33,8 +33,8 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span> Product </a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
 		        <div class="form-group">
@@ -43,7 +43,7 @@ if(isset($_SESSION["uid"])){
 		        <button type="submit" class="btn btn-primary" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
 		     </form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">0</span></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge">0</span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
@@ -68,9 +68,9 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>SignIn</a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span>  SignIn </a>
 					<ul class="dropdown-menu">
-						<div style="width:300px;">
+						<!--<div style="width:300px;">
 							<div class="panel panel-primary">
 								<div class="panel-heading">Login</div>
 								<div class="panel-heading">
@@ -85,9 +85,38 @@ if(isset($_SESSION["uid"])){
 								</div>
 								<div class="panel-footer" id="e_msg"></div>
 							</div>
+						</div> -->
+
+
+						<div style="width:300px; padding: 10px" class="border rounded">
+							<div>
+								<form onsubmit="return false" id="login">
+
+									<label for="email">Email</label>
+									<input type="email" class="form-control" name="email" id="email" required/>
+									<br>
+									<label for="email">Password</label>
+									<input type="password" class="form-control" name="password" id="password" required/>
+									<br>
+									<div class="mt-2" id="e_msg"></div>
+									
+									
+									<input type="submit" class="btn btn-success" style="float:right;"> 
+									
+									<a href="#" >Forgotten Password</a>
+									
+									
+								</form>
+							</div>
 						</div>
+
+
+
+
+
 					</ul>
 				</li>
+				<li><a href="newregist.php"><span class="glyphicon glyphicon-user"> </span>  Sign Up </a></li>
 			</ul>
 		</div>
 	</div>
